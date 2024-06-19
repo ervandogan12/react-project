@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import heartSolid from "../assets/heart-solid.svg";
-import heartRegular from "../assets/heart-regular.svg";
-import "../App.css";
-import { useFavorites } from "../context/FavoritesContext";
-import bookImg from "../assets/stepking.png";
+import heartSolid from "../../../assets/heart-solid.svg";
+import heartRegular from "../../../assets/heart-regular.svg";
+import "../../../../src/App.css";
+import { useFavorites } from "../../../context/FavoritesContext";
+import bookImg from "../../../assets/stepking.png";
 
 function BookDetail() {
   const [book, setBook] = useState(null);
@@ -12,9 +12,9 @@ function BookDetail() {
   const { id } = useParams();
   const numericId = Number(id);
 
-  const { favoriteIds, toggleFavorite } = useFavorites();
+  const { favoriteBookIds, toggleBookFavorite } = useFavorites();
 
-  const isFavorited = favoriteIds.includes(numericId);
+  const isFavorited = favoriteBookIds.includes(numericId);
 
   const fetchBookDetails = async () => {
     try {
@@ -72,7 +72,7 @@ function BookDetail() {
         className="book-image-favorite-container" 
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
-          toggleFavorite(numericId);
+          toggleBookFavorite(numericId);
         }}
 
         style={{

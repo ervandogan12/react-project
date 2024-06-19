@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import heartSolid from "../../assets/heart-solid.svg";
-import heartRegular from "../../assets/heart-regular.svg";
-import { useFavorites } from "../../context/FavoritesContext";
-import bookImg from '../../assets/stepking.png';
+import heartSolid from "../../../assets/heart-solid.svg";
+import heartRegular from "../../../assets/heart-regular.svg";
+import { useFavorites } from "../../../context/FavoritesContext";
+import bookImg from '../../../assets/stepking.png';
 
 export const Book = ({ data }) => {
-  const { favoriteIds, toggleFavorite } = useFavorites();
+  const { favoriteBookIds, toggleBookFavorite } = useFavorites();
 
-  const isFavorited = favoriteIds.includes(data.id);
+  const isFavorited = favoriteBookIds.includes(data.id);
 
   return (
     <li className="book-list">
@@ -20,7 +20,7 @@ export const Book = ({ data }) => {
               className="book-image-favorite-container"
               onClick={(e) => {
                 e.preventDefault(); // Prevent link navigation
-                toggleFavorite(data.id);
+                toggleBookFavorite(data.id);
               }}
             >
               {isFavorited ? (

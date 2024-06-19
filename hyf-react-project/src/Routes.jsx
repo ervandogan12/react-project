@@ -1,23 +1,28 @@
 // src/routes/Routes.jsx or a similar path
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ProductDetail from './components/BookDetail';
+import ShortDetail from './components/pages/Shorts/ShortDetail';
 import LandingPage from './components/pages/LandingPage';
-import Favourites from '../src/components/Favourites';
-import Books from './components/pages/Books';
-import Shorts from './components/pages/Shorts';
-import Villains from './components/pages/Villains';
-import BookDetail from './components/BookDetail';
+import Favourites from './components/pages/Favourites';
+import Books from './components/pages/Books/Books';
+import Shorts from './components/pages/Shorts/Shorts';
+import Villains from './components/pages/Villains/Villains';
+import BookDetail from './components/pages/Books/BookDetail';
+import VillainDetail from './components/pages/Villains/VillainDetails';
+import SearchResults from './components/SearchResults';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="api/books/:id" element={<BookDetail />} />
+      <Route path="api/shorts/:id" element={<ShortDetail />} />
+      <Route path="api/villains/:id" element={<VillainDetail />} />
       <Route path="/favourites" element={<Favourites />} />
       <Route path="/browse/books" element={<Books />} />
       <Route path="/browse/shorts" element={<Shorts />} />
       <Route path="/browse/villains" element={<Villains />} />
+      <Route path="/searchResults" element={<SearchResults />} />
     </Routes>
   );
 };

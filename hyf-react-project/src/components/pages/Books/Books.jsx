@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Book } from "./Book";
-import { useDataSet } from "../../context/DataContext";
+import { useDataSet } from "../../../context/DataContext";
 
 export const Books = () => {
-  const { dataSet } = useDataSet();
+  const { booksData } = useDataSet();
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = dataSet.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil(dataSet.length / itemsPerPage);
+  const currentItems = booksData.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(booksData.length / itemsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

@@ -2,8 +2,9 @@
 
 nav {
   background-color: #f0f0f0; /* Light grey background */
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 2rem;
+  max-height: 1rem;
+ 
 }
 .nav-items {
   list-style: none;
@@ -41,6 +42,15 @@ nav {
 }
 
 .books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* This ensures that the items are spaced out evenly */
+  list-style: none;
+  padding: 0;
+  margin-top: 6rem;
+}
+
+.villains {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* This ensures that the items are spaced out evenly */
@@ -100,7 +110,7 @@ nav {
 
 .dropdown {
   position: absolute;
-  top: 100%;
+  top: 15%;
   left: 0;
   background-color: white;
   border: 1px solid #ccc;
@@ -219,6 +229,53 @@ nav {
 
 .pagination button:hover {
   background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.villain-list {
+  list-style-type: none; /* Removes the default list style */
+  margin: 0;
+  padding: 0;
+}
+
+.villain {
+  display: flex;
+  flex-direction: column; /* Aligns items vertically */
+  align-items: center; /* Centers items horizontally */
+  text-align: center; /* Centers text */
+  margin: 20px; /* Adds space around each book */
+  padding: 10px; /* Adds space inside each book container */
+  background-color: #f0f0f0; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+.villain-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+  gap: 20px; /* Adds space between the items */
+  padding: 20px; /* Padding around the grid */
+}
+
+.villain-image-container {
+  width: 100px; /* Sets a fixed width for the image container */
+  height: 150px; /* Sets a fixed height for the image container */
+  overflow: hidden; /* Ensures the image does not overflow the container */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+
+.villain-img {
+  max-width: 100%; /* Ensures the image is fully visible and maintains aspect ratio */
+  max-height: 100%;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.villain-title {
+  list-style-type: none; /* Removes list markings */
+  padding-left: 10px; /* Adds indentation */
 }
 
 @media (max-width: 768px) {
