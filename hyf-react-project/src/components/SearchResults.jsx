@@ -9,11 +9,15 @@ function SearchResults() {
   return (
     <div>
       <h2>Search Results</h2>
-      <ul className="books">
-        {searchResults.map((searchResult) => (
-          <Book key={searchResult.id} data={searchResult} />
-        ))}
-      </ul>
+      {searchResults.length > 0 ? (
+        <ul className="books">
+          {searchResults.map((searchResult) => (
+            <Book key={searchResult.id} data={searchResult} />
+          ))}
+        </ul>
+      ) : (
+        <p>No results found. Please try a different search.</p>
+      )}
     </div>
   );
 }

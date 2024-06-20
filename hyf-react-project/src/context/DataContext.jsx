@@ -6,7 +6,6 @@ export const DataContext = createContext();
 export const useDataSet = () => useContext(DataContext);
 
 export const DataProvider = ({ children }) => {
-  // Initialize separate states for each kind of dataset
   const [booksData, setBooksData] = useState([]);
   const [villainsData, setVillainsData] = useState([]);
   const [shortsData, setShortsData] = useState([]);
@@ -21,15 +20,17 @@ export const DataProvider = ({ children }) => {
     if (category) {
       try {
         setIsLoading(true);
-        const response = await fetch(`https://stephen-king-api.onrender.com/api/${category}`);
+        const response = await fetch(
+          `https://stephen-king-api.onrender.com/api/${category}`
+        );
         const data = await response.json();
-        
+
         // Update the correct dataset based on the category
-        if (category === 'books') {
+        if (category === "books") {
           setBooksData(data["data"]);
-        } else if (category === 'villains') {
+        } else if (category === "villains") {
           setVillainsData(data["data"]);
-        } else if (category === 'shorts') {
+        } else if (category === "shorts") {
           setShortsData(data["data"]);
         }
 
@@ -47,7 +48,9 @@ export const DataProvider = ({ children }) => {
   }, [categoryState]);
 
   const handleCategoryClick = (clickedCategory) => {
-    setCategoryState(clickedCategory === categoryState ? undefined : clickedCategory);
+    setCategoryState(
+      clickedCategory === categoryState ? undefined : clickedCategory
+    );
   };
 
   return (

@@ -14,7 +14,7 @@ export const Book = ({ data }) => {
     <li className="book-list">
       <Link to={`/api/books/${data.id}`}>
         <div className="book">
-          <div className="product-image-container">
+          <div className="book-image-container">
             <img className="book-img" src={bookImg} alt={data.Title} />
             <div
               className="book-image-favorite-container"
@@ -39,6 +39,7 @@ export const Book = ({ data }) => {
             </div>
           </div>
           <span className="book-title">{data.Title}</span>
+          <span className="book-year">{data.Year}</span>
         </div>
       </Link>
     </li>

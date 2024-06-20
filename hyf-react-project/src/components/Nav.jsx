@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SearchSection from "./SearchSection";
 import { useDataSet } from "../context/DataContext";
+import FilterSection from "./FilterSection";
 
 function Nav() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -9,6 +10,11 @@ function Nav() {
   const navigate = useNavigate();
 
   const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);
+
+  const handleBooksClick = () => {
+    handleCategoryClick("books");
+  };
+
   return (
     <nav>
       <ul className="nav-items">
@@ -20,26 +26,17 @@ function Nav() {
           {isDropdownVisible && (
             <ul className="dropdown">
               <li>
-                <Link
-                  to="/browse/books"
-                  onClick={() => handleCategoryClick("books")}
-                >
+                <Link to="/browse/books" onClick={handleBooksClick}>
                   Books
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/browse/shorts"
-                  onClick={() => handleCategoryClick("shorts")}
-                >
+                <Link to="/browse/shorts" onClick={() => handleCategoryClick("shorts")}>
                   Shorts
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/browse/villains"
-                  onClick={() => handleCategoryClick("villains")}
-                >
+                <Link to="/browse/villains" onClick={() => handleCategoryClick("villains")}>
                   Villians
                 </Link>
               </li>
@@ -49,10 +46,8 @@ function Nav() {
         <li>
           <Link to="/favourites">Favourites</Link>
         </li>
-        <li>
-          <SearchSection />
-        </li>{" "}
-        {/* Include the search section here */}
+        <li><SearchSection /></li>
+        <li><FilterSection /></li> 
       </ul>
     </nav>
   );

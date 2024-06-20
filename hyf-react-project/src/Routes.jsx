@@ -10,6 +10,7 @@ import Villains from './components/pages/Villains/Villains';
 import BookDetail from './components/pages/Books/BookDetail';
 import VillainDetail from './components/pages/Villains/VillainDetails';
 import SearchResults from './components/SearchResults';
+import FilterResults from './components/FilterResults';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes = () => {
       <Route path="/browse/shorts" element={<Shorts />} />
       <Route path="/browse/villains" element={<Villains />} />
       <Route path="/searchResults" element={<SearchResults />} />
+      <Route path="/filterResults" element={<FilterResults />} />
     </Routes>
   );
 };
