@@ -18,8 +18,8 @@ function Nav() {
   return (
     <nav>
       <ul className="nav-items">
-        <li>
-          <button onClick={() => navigate("/")}>Back to Home</button>
+        <li onClick={() => navigate("/")}>
+          <i className="fas fa-home"></i>
         </li>
         <li onClick={toggleDropdown}>
           Browse
@@ -31,23 +31,35 @@ function Nav() {
                 </Link>
               </li>
               <li>
-                <Link to="/browse/shorts" onClick={() => handleCategoryClick("shorts")}>
+                <Link
+                  to="/browse/shorts"
+                  onClick={() => handleCategoryClick("shorts")}
+                >
                   Shorts
                 </Link>
               </li>
               <li>
-                <Link to="/browse/villains" onClick={() => handleCategoryClick("villains")}>
+                <Link
+                  to="/browse/villains"
+                  onClick={() => handleCategoryClick("villains")}
+                >
                   Villians
                 </Link>
+              </li>
+              <li>
+                <Link to="/favourites">Favourites</Link>
               </li>
             </ul>
           )}
         </li>
+
         <li>
-          <Link to="/favourites">Favourites</Link>
+          <SearchSection />
         </li>
-        <li><SearchSection /></li>
-        <li><FilterSection /></li> 
+
+        <li>
+          <FilterSection />
+        </li>
       </ul>
     </nav>
   );

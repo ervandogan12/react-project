@@ -5,40 +5,48 @@ export const FavoritesContext = createContext();
 export const useFavorites = () => useContext(FavoritesContext);
 
 export const FavoritesProvider = ({ children }) => {
-  const [favoriteBookIds, setBookFavoriteIds] = useState(() => {
-    const storedBookFavorites = localStorage.getItem('favoriteBookIds');
+  const [favoriteBooks, setFavoriteBooks] = useState(() => {
+    const storedBookFavorites = localStorage.getItem('favoriteBooks');
     return storedBookFavorites ? JSON.parse(storedBookFavorites) : [];
   });
 
-  const [favoriteShortIds, setShortFavoriteIds] = useState(() => {
-    const storedShortFavorites = localStorage.getItem('favoriteShortIds');
+  const [favoriteShorts, setFavoriteShorts] = useState(() => {
+    const storedShortFavorites = localStorage.getItem('favoriteShorts');
     return storedShortFavorites ? JSON.parse(storedShortFavorites) : [];
   });
-  useEffect(() => {
-    localStorage.setItem('favoriteShortIds', JSON.stringify(favoriteShortIds));
-  }, [favoriteShortIds]);
-  useEffect(() => {
-    localStorage.setItem('favoriteBookIds', JSON.stringify(favoriteBookIds));
-  }, [favoriteBookIds]);
 
-  const toggleBookFavorite = (dataId) => {
-    setBookFavoriteIds((currentFavorites) => {
-      return currentFavorites.includes(dataId) ? currentFavorites.filter(id => id !== dataId) : [...currentFavorites, dataId];
+  useEffect(() => {
+    localStorage.setItem('favoriteBooks', JSON.stringify(favoriteBooks));
+  }, [favoriteBooks]);
+
+  useEffect(() => {
+    localStorage.setItem('favoriteShorts', JSON.stringify(favoriteShorts));
+  }, [favoriteShorts]);
+
+  const toggleBookFavorite = (book) => {
+    setFavoriteBooks((currentFavorites) => {
+      const index = currentFavorites.findIndex(fav => fav.id === book.id);
+      if (index > -1) {
+        return currentFavorites.filter((_, i) => i !== index);
+      } else {
+        return [...currentFavorites, book];
+      }
     });
-
   };
 
-  const toggleShortFavorite = (dataId) => {
-    setShortFavoriteIds((currentFavorites) => {
-      return currentFavorites.includes(dataId) ? currentFavorites.filter(id => id !== dataId) : [...currentFavorites, dataId];
+  const toggleShortFavorite = (short) => {
+    setFavoriteShorts((currentFavorites) => {
+      const index = currentFavorites.findIndex(fav => fav.id === short.id);
+      if (index > -1) {
+        return currentFavorites.filter((_, i) => i !== index);
+      } else {
+        return [...currentFavorites, short];
+      }
     });
-
   };
-
-
 
   return (
-    <FavoritesContext.Provider value={{favoriteBookIds,favoriteShortIds, toggleBookFavorite, toggleShortFavorite}}>
+    <FavoritesContext.Provider value={{ favoriteBooks, favoriteShorts, toggleBookFavorite, toggleShortFavorite }}>
       {children}
     </FavoritesContext.Provider>
   );

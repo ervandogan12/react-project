@@ -12,9 +12,9 @@ function BookDetail() {
   const { id } = useParams();
   const numericId = Number(id);
 
-  const { favoriteBookIds, toggleBookFavorite } = useFavorites();
+  const { favoriteBooks, toggleBookFavorite } = useFavorites();
 
-  const isFavorited = favoriteBookIds.includes(numericId);
+  const isFavorited = favoriteBooks.some((favoriteBook) => favoriteBook.id === book?.id);
 
   const fetchBookDetails = async () => {
     try {
@@ -42,7 +42,7 @@ function BookDetail() {
   return book ? (
     <div className="book-details-container">
       <div className="book-text-details">
-      <h2>Book Title: {book.Title}</h2>
+        <h2>Book Title: {book.Title}</h2>
         <ul>
           <li>Year: {book.Year}</li>
           <li>Pages: {book.Pages}</li>
@@ -69,21 +69,20 @@ function BookDetail() {
         </div>
       )}
       <div
-        className="book-image-favorite-container" 
+        className="book-image-favorite-container"
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
-          toggleBookFavorite(numericId);
+          toggleBookFavorite(book);
         }}
-
         style={{
-          backgroundColor: '#fff',
-          cursor: 'pointer',
-          height: '40px',
-          padding: '8px',
-          position: 'absolute',
-          top: '14vh',
-          right: '10px',
-          width: '40px',
+          backgroundColor: "#fff",
+          cursor: "pointer",
+          height: "40px",
+          padding: "8px",
+          position: "absolute",
+          top: "14vh",
+          right: "10px",
+          width: "40px",
         }}
       >
         {isFavorited ? (

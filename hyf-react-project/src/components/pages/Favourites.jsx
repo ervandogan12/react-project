@@ -5,25 +5,24 @@ import Book from "./Books/Book";
 import Short from "./Shorts/Short";
 
 function Favourites() {
-  const { booksData, shortsData } = useDataSet() || {};
-  const { favoriteBookIds, favoriteShortIds } = useFavorites();
 
-  // Filter booksData and shortsData based on favorite IDs
-  let favoritesBooks = booksData.filter(book => favoriteBookIds.includes(book.id));
-  let favoritesShorts = shortsData.filter(short => favoriteShortIds.includes(short.id));
+  const { favoriteBooks, favoriteShorts } = useFavorites();
+
+ 
+
 
   return (
     <div>
       <h1>Favourites</h1>
-      {favoritesBooks.length === 0 && favoritesShorts.length === 0 ? (
+      {favoriteBooks.length === 0 && favoriteShorts.length === 0 ? (
         <p>No favorites added yet.</p>
       ) : (
         <ul className="books">
-          {favoritesBooks.map((favoritesBook) => (
-            <Book key={favoritesBook.id} data={favoritesBook} />
+          {favoriteBooks.map((favoriteBook) => (
+            <Book key={favoriteBook.id} data={favoriteBook} />
           ))}
-          {favoritesShorts.map((favoritesShort) => (
-            <Short key={favoritesShort.id} data={favoritesShort} />
+          {favoriteShorts.map((favoriteShort) => (
+            <Short key={favoriteShort.id} data={favoriteShort} />
           ))}
         </ul>
       )}

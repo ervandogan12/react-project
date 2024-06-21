@@ -9,11 +9,11 @@ function ShortDetail() {
   const [short, setShort] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
-  const numericId = Number(id);
 
-  const { favoriteShortIds, toggleShortFavorite } = useFavorites();
 
-  const isFavorited = favoriteShortIds.includes(numericId);
+  const { favoriteShorts, toggleShortFavorite } = useFavorites();
+
+  const isFavorited = favoriteShorts.some((favoriteShort) => favoriteShort.id === short?.id);
 
   const fetchShortDetails = async () => {
     try {
@@ -72,7 +72,7 @@ function ShortDetail() {
         className="book-image-favorite-container" 
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
-          toggleShortFavorite(numericId);
+          toggleShortFavorite(short);
         }}
 
         style={{

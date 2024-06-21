@@ -38,7 +38,7 @@ function FilterSection() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="filter-section" onSubmit={handleSubmit}>
       <select value={selectedYear} onChange={handleYearChange}>
         <option value="">Select a year</option>
         {[...Array(51).keys()].map((i) => (

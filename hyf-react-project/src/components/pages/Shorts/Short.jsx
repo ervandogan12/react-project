@@ -7,9 +7,10 @@ import shortImg from '../../../assets/shortImg.png';
 
 
 export const Short = ({ data }) => {
-  const { favoriteShortIds, toggleShortFavorite } = useFavorites();
+  const { favoriteShorts, toggleShortFavorite } = useFavorites();
 
-  const isFavorited = favoriteShortIds.includes(data.id);
+
+  const isFavorited = favoriteShorts.some(short => short.id === data.id);
 
   return (
     <li className="book-list">
@@ -21,7 +22,7 @@ export const Short = ({ data }) => {
               className="book-image-favorite-container"
               onClick={(e) => {
                 e.preventDefault(); // Prevent link navigation
-                toggleShortFavorite(data.id);
+                toggleShortFavorite(data);
               }}
             >
               {isFavorited ? (
@@ -40,6 +41,7 @@ export const Short = ({ data }) => {
             </div>
           </div>
           <span className="book-title">{data.title}</span>
+          <span className="book-title">{data.year}</span>
         </div>
       </Link>
     </li>

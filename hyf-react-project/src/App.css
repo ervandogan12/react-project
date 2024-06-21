@@ -1,59 +1,46 @@
-
-
 nav {
-  background-color: #f0f0f0; /* Light grey background */
-  padding: 2rem;
-  max-height: 1rem;
- 
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 1rem; /* Adjusted padding */
+  overflow: hidden; /* Ensures the nav content fits */
+  width: 100%; /* Ensures the nav spans the full width */
 }
 .nav-items {
+  width: 100%; /* Ensures the nav items span the full width */
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center; /* Center the nav items horizontally */
-  gap: 20px; /* Add some space between the nav items */
-}
-.nav-items li {
-  position: relative; /* Needed for absolute positioning of the dropdown */
+  justify-content: center;
+  gap: 30px; /* Adjusted gap */
+  flex-wrap: wrap; /* Allows items to wrap in smaller screens */
 }
 
-.ecommerce-aplication{
-  margin: 0.5rem;
+.nav-items li a {
+  text-decoration: none;
+  color: #000;
+  padding: 0.5rem; /* Added padding for better touch targets */
 }
-.categories{
-  display:flex
+.nav-items li a {
+  text-decoration: none; 
+  color: #000; 
 }
+.search-section{
+  display: flex;
+  justify-content: center;
 
-.category-item{
-  background-color: #efeff0;
-  cursor: pointer;
-  font-weight: 700;
-  margin: 2px;
-  padding: 12px;
 }
-.category-item:hover {
-  background-color: #bdbdc1;
-  color: white;
-}
+.filter-section{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap */
+ /* Space between items */
 
-.selected-category-item{
-  background-color: #bdbdc1;
 }
-
-.books {
+.books, .villains {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* This ensures that the items are spaced out evenly */
-  list-style: none;
-  padding: 0;
-  margin-top: 6rem;
-}
-
-.villains {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* This ensures that the items are spaced out evenly */
+  justify-content: center; 
   list-style: none;
   padding: 0;
   margin-top: 6rem;
@@ -63,10 +50,7 @@ nav {
   top:6rem;
   left: 0;
   width: 25%;
-  /* Adjust the width or height as needed */
 }
-
-
 .book-list{
   margin: 8px;
   padding: 8px;
@@ -75,67 +59,54 @@ nav {
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-
   text-align: center;
   transition: transform 0.3s;
   position: relative;
-
   margin-bottom: 10px;
 }
-
 .book{
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-
 .book-img {
   margin-bottom: auto;
   margin-top: auto;
   max-height: 200px;
   object-fit: contain;
-
 }
-
 .book-title {
   overflow: hidden;
   padding: 8px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.nav-items li {
-  position: relative;
-}
-
 .dropdown {
   position: absolute;
-  top: 15%;
-  left: 0;
+  top: 0%;
+  left: 35%;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0;
   margin-top: 2px;
   list-style: none;
+  display: none; /* Added to ensure dropdown is hidden by default */
 }
-
 .dropdown li {
   padding: 8px 12px;
 }
-
 .dropdown li:hover {
   background-color: #f2f2f2;
 }
 .nav-items li:hover .dropdown {
-  display: block; /* Show the dropdown on hover */
+  display: block; 
 }
 @media (min-width: 600px){
-  .product-list {
-    width: calc(33% - 16px);
+  .book-list {
+    width: calc(28% - 16px);
   }
 }
-
 .book-details-container {
   display: flex;
   flex-direction: column;
@@ -149,123 +120,90 @@ nav {
 .title-container {
   flex: 2;
   padding-top: 5rem;
-
 }
 .title-container h1 {
  margin-top: 5rem;
-
-
 }
 .title-container p {
   flex: 1;
-
 }
-
 .flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: start; /* Aligns items to the start of the container */
-  align-items: start; /* Aligns items to the start vertically */
-  gap: 20px; /* Adds some space between the flex items */
+  justify-content: start; 
+  align-items: start; 
+  gap: 20px; 
 }
-
 .villains-list-container {
-  flex: 1; /* Allows this container to grow and take up space, adjust as needed */
-  /* Additional styling for the villains list container */
+  flex: 1; 
 }
 .book-image-favorite-container {
   background-color: #fff;
   cursor: pointer;
-  height: 40px; /* Increased size for better visibility */
+  height: 40px; 
   padding: 8px;
-  position: absolute; /* Keep as absolute for better control */
-  top: 1vh; /* Adjust as needed to position correctly */
-  right: 10px; /* Adjust as needed to position correctly */
-  width: 40px; /* Increased size for better visibility */
+  position: absolute; 
+  top: 1vh; 
+  right: 10px; 
+  width: 25px; 
 }
-
 .icon-favourite {
   position: absolute;
-  right: 8px; /* Align to the right side of the container */
-  top: 8px; /* Align to the top of the container */
-  width: 24px; /* Example width, adjust as necessary */
-  height: 24px; /* Example height, adjust as necessary */
+  right: 8px; 
+  top: 8px; 
+  width: 24px; 
+  height: 24px; 
 }
-
-
-.nav-items {
-  display: flex;
-  flex-direction: row; /* Align items in a row */
-  list-style-type: none; /* Remove default list styling */
-  padding: 0; /* Remove default padding */
-}
-
-.nav-items li {
-  margin-right: 20px; /* Add space between menu items */
-}
-
-/* Optional: Style the links */
-.nav-items li a {
-  text-decoration: none; /* Remove underline from links */
-  color: #000; /* Set link color */
-}
-
 .pagination {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically (if needed) */
-  margin-top: 20px; /* Add some space above the pagination */
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 20px; 
 }
-
 .pagination button {
-  font-size: 1.2rem; /* Larger font size */
-  padding: 10px 15px; /* Larger padding */
-  margin: 0 5px; /* Space between buttons */
-  cursor: pointer; /* Cursor pointer */
-  background-color: #f0f0f0; /* Light grey background */
-  border: 1px solid #d1d1d1; /* Slight border */
-  border-radius: 5px; /* Rounded corners */
+  font-size: 1.2rem; 
+  padding: 10px 15px; 
+  margin: 0 5px; 
+  cursor: pointer; 
+  background-color: #f0f0f0; 
+  border: 1px solid #d1d1d1; 
+  border-radius: 5px; 
 }
-
 .pagination button:hover {
-  background-color: #e0e0e0; /* Slightly darker on hover */
+  background-color: #e0e0e0; 
 }
-
 .villain-list {
-  list-style-type: none; /* Removes the default list style */
+  list-style-type: none; 
   margin: 0;
   padding: 0;
 }
-
 .villain {
   display: flex;
-  flex-direction: column; /* Aligns items vertically */
-  align-items: center; /* Centers items horizontally */
-  text-align: center; /* Centers text */
-  margin: 20px; /* Adds space around each book */
-  padding: 10px; /* Adds space inside each book container */
-  background-color: #f0f0f0; /* Light grey background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
+  margin: 20px; 
+  padding: 10px; 
+  background-color: #f0f0f0; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 .villain-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
-  gap: 20px; /* Adds space between the items */
-  padding: 20px; /* Padding around the grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  padding: 20px; 
 }
-
 .villain-image-container {
-  width: 100px; /* Sets a fixed width for the image container */
-  height: 150px; /* Sets a fixed height for the image container */
-  overflow: hidden; /* Ensures the image does not overflow the container */
+  width: 100px; 
+  height: 150px; 
+  overflow: hidden; 
   display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center; /* Centers the image vertically */
+  justify-content: center; 
+  align-items: center; 
 }
-
 .villain-img {
-  max-width: 100%; /* Ensures the image is fully visible and maintains aspect ratio */
+  max-width: 100%; 
   max-height: 100%;
 }
 ul{
@@ -274,39 +212,69 @@ ul{
   margin: 0;
 }
 .villain-title {
-  list-style-type: none; /* Removes list markings */
-  padding-left: 10px; /* Adds indentation */
+  list-style-type: none; 
+  padding-left: 10px; 
 }
-
 @media (max-width: 768px) {
-  .product-details-container {
+  .search-section {
+    justify-content: flex-end; /* Keeps content aligned to the right */
+    padding-right: 10px; /* Adjusts padding for even smaller screens */
+  }
+  .filter-section {
+    justify-content: flex-end; /* Keeps content aligned to the right */
+    padding-left: 210px; /* Adjusts padding for even smaller screens */
+  }
+
+  .book-details-container {
     flex-direction: column;
   }
-
-  .product-details-image {
+  .book-details-image {
     text-align: center;
   }
-
-  .product-details-image img {
+  .book-details-image img {
     max-width: 90%;
     margin: 20px;
   }
   .title-container {
     padding-top: 0rem;
-  
   }
   .title-container h1 {
    margin-top: 0rem;
-  
-  
   }
   .title-container p {
     padding-top: 0rem;
-  
+  }
+
+  .nav-items {
+    justify-content: space-around; /* Adjusts spacing for smaller screens */
+  }
+
+  .nav-items li {
+    margin-right: 0; /* Removes margin to fit on smaller screens */
+  }
+
+  .nav-items li a {
+    padding: 0.5rem; /* Ensures adequate padding for touch targets */
+  }
+  .pagination button {
+    font-size: 1rem; /* Smaller font size */
+    padding: 8px 12px; /* Smaller padding */
   }
 }
 
+@media (max-width: 480px) {
+  .pagination {
+    flex-wrap: wrap; /* Allow pagination items to wrap */
+    margin-top: 10px; /* Smaller top margin */
+  }
+  .pagination button {
+    font-size: 0.8rem; /* Even smaller font size */
+    padding: 5px 10px; /* Even smaller padding */
+    margin: 2px; /* Smaller margin */
+  }
 
-
-
-
+  .search-section, .filter-section {
+    justify-content: flex-end; /* Aligns content to the right */
+    padding-right: 15px; /* Adds some padding to ensure content is not sticking to the edge */
+  }
+}

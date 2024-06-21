@@ -38,7 +38,7 @@ function SearchSection() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-section" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search..."

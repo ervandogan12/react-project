@@ -6,9 +6,9 @@ import { useFavorites } from "../../../context/FavoritesContext";
 import bookImg from '../../../assets/stepking.png';
 
 export const Book = ({ data }) => {
-  const { favoriteBookIds, toggleBookFavorite } = useFavorites();
+  const { favoriteBooks, toggleBookFavorite } = useFavorites();
 
-  const isFavorited = favoriteBookIds.includes(data.id);
+  const isFavorited = favoriteBooks.some(book => book.id === data.id);
 
   return (
     <li className="book-list">
@@ -20,7 +20,7 @@ export const Book = ({ data }) => {
               className="book-image-favorite-container"
               onClick={(e) => {
                 e.preventDefault(); // Prevent link navigation
-                toggleBookFavorite(data.id);
+                toggleBookFavorite(data);
               }}
             >
               {isFavorited ? (
