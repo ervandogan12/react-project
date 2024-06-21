@@ -1,14 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg";
 import heartRegular from "../../../assets/heart-regular.svg";
 import { useFavorites } from "../../../context/FavoritesContext";
 import bookImg from '../../../assets/stepking.png';
+import { useAuth } from "../../../context/AuthContext";
 
 export const Book = ({ data }) => {
   const { favoriteBooks, toggleBookFavorite } = useFavorites();
+  const {isAuthenticated} = useAuth();
+  const navigate = useNavigate();
 
   const isFavorited = favoriteBooks.some(book => book.id === data.id);
+  const handleFavoriteClick = (e) => {
+    e.preventDefault(); // Prevent link navigation
+
+    if (!isAuthenticated) {
+      navigate('/login'); 
+      alert('Please log in to add favorites.'); // Placeholder action
+      return;
+    }
+
+    toggleBookFavorite(data);
+  };
 
   return (
     <li className="book-list">
@@ -18,10 +32,7 @@ export const Book = ({ data }) => {
             <img className="book-img" src={bookImg} alt={data.Title} />
             <div
               className="book-image-favorite-container"
-              onClick={(e) => {
-                e.preventDefault(); // Prevent link navigation
-                toggleBookFavorite(data);
-              }}
+              onClick={handleFavoriteClick}
             >
               {isFavorited ? (
                 <img

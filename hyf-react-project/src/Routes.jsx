@@ -14,24 +14,24 @@ import FilterResults from './components/FilterResults';
 import Login from './Login';
 import Registration from './Registration';
 import AuthPage from './AuthPage';
-import ProtectedRoute from './ProtectedRoute';
+
 
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<AuthPage />} />
-      <Route path="/" element={<ProtectedRoute><LandingPage /></ProtectedRoute>} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/registration" element={<Registration />} />
-      <Route path="api/books/:id" element={<ProtectedRoute><BookDetail /></ProtectedRoute>} />
-      <Route path="api/shorts/:id" element={<ProtectedRoute><ShortDetail /></ProtectedRoute>} />
-      <Route path="api/villains/:id" element={<ProtectedRoute><VillainDetail /></ProtectedRoute>} />
-      <Route path="/favourites" element={<ProtectedRoute><Favourites /></ProtectedRoute>} />
-      <Route path="/browse/books" element={<ProtectedRoute><Books /></ProtectedRoute>} />
-      <Route path="/browse/shorts" element={<ProtectedRoute><Shorts /></ProtectedRoute>} />
-      <Route path="/browse/villains" element={<ProtectedRoute><Villains /></ProtectedRoute>} />
-      <Route path="/searchResults" element={<ProtectedRoute><SearchResults /></ProtectedRoute>} />
-      <Route path="/filterResults" element={<ProtectedRoute><FilterResults /></ProtectedRoute>} />
+      <Route path="api/books/:id" element={<BookDetail />} />
+      <Route path="api/shorts/:id" element={<ShortDetail />} />
+      <Route path="api/villains/:id" element={<VillainDetail />} />
+      <Route path="/favourites" element={<Favourites />} />
+      <Route path="/browse/books" element={<Books />} />
+      <Route path="/browse/shorts" element={<Shorts />} />
+      <Route path="/browse/villains" element={<Villains />} />
+      <Route path="/searchResults" element={<SearchResults />} />
+      <Route path="/filterResults" element={<FilterResults />} />
     </Routes>
   );
 };
