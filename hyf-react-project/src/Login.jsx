@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './context/AuthContext'; // Adjust the path as necessary
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3001/login', { email, password });
-      localStorage.setItem('token', response.data.token); 
+      login(response.data.token); // Update the auth state
       setMessage('Login successful');
-      navigate('/'); 
+      navigate('/');
     } catch (error) {
       setMessage('Invalid credentials');
     }
