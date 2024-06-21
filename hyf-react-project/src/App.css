@@ -1,9 +1,17 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentContainer {
+  flex-grow: 1;
+}
 nav {
   background-color: #f0f0f0;
   width: 100%;
   padding: 1rem; /* Adjusted padding */
   overflow: hidden; /* Ensures the nav content fits */
-  width: 100%; /* Ensures the nav spans the full width */
 }
 .nav-items {
   width: 100%; /* Ensures the nav items span the full width */
