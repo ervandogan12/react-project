@@ -4,6 +4,7 @@ import landingImage from '../../assets/landing_img.png';
 
 export const LandingPage = () => {
   return (
+    
     <div style={{
       display: 'flex',
       flexDirection: 'column',

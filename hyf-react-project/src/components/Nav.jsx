@@ -18,7 +18,7 @@ function Nav() {
   return (
     <nav>
       <ul className="nav-items">
-        <li onClick={() => navigate("/")}>
+        <li onClick={() => navigate("/browse")}>
           <i className="fas fa-home"></i>
         </li>
         <li onClick={toggleDropdown}>
