@@ -7,6 +7,7 @@ import { useAuth } from "../context/AuthContext";
 function Nav() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const { handleCategoryClick } = useDataSet();
+   const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const { logout } = useAuth(); // Assuming useAuth() provides logout method
 
@@ -17,8 +18,10 @@ function Nav() {
   };
 
   const handleLogout = () => {
-    logout(); // Call the logout method from your authProvider
-    navigate('/'); // Optionally redirect user to login page
+    logout();
+    setMessage('Logout successful');
+    navigate("/login");
+   
   };
 
   return (

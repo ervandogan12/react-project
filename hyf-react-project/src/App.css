@@ -3,7 +3,31 @@
   flex-direction: column;
   min-height: 100vh;
 }
+.authform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  width: 40vh; 
+  background-color: blue;
+  margin-top: 15vh;
+  margin-left: 70vh;
+}
 
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+label {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.auth-button {
+  margin-top: 10px; /* Space above the buttons */
+}
 .contentContainer {
   flex-grow: 1;
 }
@@ -267,6 +291,24 @@ ul{
   .pagination button {
     font-size: 1rem; /* Smaller font size */
     padding: 8px 12px; /* Smaller padding */
+  }
+  .authform-container {
+    width: 80vw; /* Adjust width for smaller screens */
+    height: auto; /* Let the height grow as needed */
+    margin-top: 10vh; /* Adjust top margin */
+    margin-left: 10vw; /* Center container more effectively */
+  }
+
+  .auth-form {
+    width: 90%; /* Use a percentage of the container's width */
+    margin: auto; /* Center form in the container */
+  }
+
+  .auth-button {
+    padding: 10px; /* Increase padding for easier tapping on touch devices */
+    width: 70px;
+    margin-left: 35%;
+    height: 30px;
   }
 }
 

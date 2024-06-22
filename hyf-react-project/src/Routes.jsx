@@ -13,14 +13,14 @@ import SearchResults from './components/SearchResults';
 import FilterResults from './components/FilterResults';
 import Login from './Login';
 import Registration from './Registration';
-import AuthPage from './AuthPage';
+import AuthForm from './Login';
 
 
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/login" element={<AuthPage />} />
+      <Route path="/login" element={<AuthForm />} />
       <Route path="/" element={<LandingPage />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="api/books/:id" element={<BookDetail />} />

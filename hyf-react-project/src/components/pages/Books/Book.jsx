@@ -9,6 +9,7 @@ import { useAuth } from "../../../context/AuthContext";
 export const Book = ({ data }) => {
   const { favoriteBooks, toggleBookFavorite } = useFavorites();
   const {isAuthenticated} = useAuth();
+  console.log(isAuthenticated);
   const navigate = useNavigate();
 
   const isFavorited = favoriteBooks.some(book => book.id === data.id);
