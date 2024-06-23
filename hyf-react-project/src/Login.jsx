@@ -13,7 +13,7 @@ const AuthForm = () => {
   const API_BASE_URL =
     import.meta.env.VITE_REACT_APP_BACKEND_URL ||
     "https://react-project-2-3m1d.onrender.com";
-  // const API_BASE_URL = import.meta.env.VITE_REACT_APP_BACKEND_URL || 'http://localhost:10000';
+
   console.log(API_BASE_URL);
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -48,7 +48,7 @@ const AuthForm = () => {
       setPassword("");
       navigate("/");
     } catch (error) {
-      setMessage(error.response.data.error); // Assuming the error response has an error field
+      setMessage(error.response.data.error); 
     }
   };
 

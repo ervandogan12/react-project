@@ -10,7 +10,7 @@ function Nav() {
   const { handleCategoryClick } = useDataSet();
    const [message, setMessage] = useState('');
   const navigate = useNavigate();
-  const { logout } = useAuth(); // Assuming useAuth() provides logout method
+  const { logout } = useAuth();
 
   const toggleDropdown = () => setIsDropdownVisible(!isDropdownVisible);
 
@@ -61,9 +61,6 @@ function Nav() {
         </li>
         <li>
           <FilterSection />
-        </li>
-        <li>
-          <UserProfile />
         </li>
         <li onClick={handleLogout}>
         <i className="fas fa-sign-out-alt"></i>
