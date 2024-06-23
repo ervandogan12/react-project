@@ -4,6 +4,7 @@ import SearchSection from "./SearchSection";
 import { useDataSet } from "../context/DataContext";
 import FilterSection from "./FilterSection";
 import { useAuth } from "../context/AuthContext";
+import UserProfile from "./UserProfile";
 function Nav() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const { handleCategoryClick } = useDataSet();
@@ -60,6 +61,9 @@ function Nav() {
         </li>
         <li>
           <FilterSection />
+        </li>
+        <li>
+          <UserProfile />
         </li>
         <li onClick={handleLogout}>
         <i className="fas fa-sign-out-alt"></i>
