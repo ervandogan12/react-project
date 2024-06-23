@@ -35,4 +35,5 @@ app.post('/login', async (req, res) => {
   res.json({ token });
 });
 
-app.listen(10000, () => console.log('Server running on port 10000'));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
