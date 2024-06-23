@@ -22,7 +22,7 @@ const AuthForm = () => {
         email,
         password,
       });
-
+      console.log(response.data.token);
       login(response.data.token);
       setMessage("Registration successful");
       setEmail("");

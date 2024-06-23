@@ -18,7 +18,10 @@ app.post('/register', async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   try {
     const user = await User.create({ email, password: hashedPassword });
-    res.status(201).send('User created successfully');
+
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+
+    res.status(201).json({ message: 'User created successfully', token });
   } catch (error) {
     res.status(500).send(error.message);
   }
