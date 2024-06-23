@@ -13,8 +13,6 @@ const AuthForm = () => {
   const API_BASE_URL =
     import.meta.env.VITE_REACT_APP_BACKEND_URL ||
     "https://react-project-2-3m1d.onrender.com";
-
-  console.log(API_BASE_URL);
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -22,7 +20,7 @@ const AuthForm = () => {
         email,
         password,
       });
-      console.log(response.data.token);
+  
       login(response.data.token, email);
       setMessage("Registration successful");
       setEmail("");

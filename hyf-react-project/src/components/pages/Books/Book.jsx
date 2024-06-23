@@ -9,16 +9,16 @@ import { useAuth } from "../../../context/AuthContext";
 export const Book = ({ data }) => {
   const { favoriteBooks, toggleBookFavorite } = useFavorites();
   const {isAuthenticated} = useAuth();
-  console.log(isAuthenticated);
+
   const navigate = useNavigate();
 
   const isFavorited = favoriteBooks.some(book => book.id === data.id);
   const handleFavoriteClick = (e) => {
-    e.preventDefault(); // Prevent link navigation
+    e.preventDefault(); 
 
     if (!isAuthenticated) {
       navigate('/login'); 
-      alert('Please log in to add favorites.'); // Placeholder action
+      alert('Please log in to add favorites.'); 
       return;
     }
 

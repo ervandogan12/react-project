@@ -3,15 +3,22 @@
   flex-direction: column;
   min-height: 100vh;
 }
+.footer-style {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+}
 .authform-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40vh;
-  width: 40vh; 
+  width: 40vh;
   background-color: blue;
   margin-top: 15vh;
-  margin-left: 70vh;
+  margin-left: auto; 
+  margin-right: auto; 
 }
 .user-profile {
   padding: 10px;
@@ -254,8 +261,10 @@ ul{
   padding-left: 10px; 
 }
 @media (max-width: 768px) {
+
   .user-profile {
     background-color: lightblue;
+    max-width: 100%;
   }
   .search-section {
     justify-content: flex-end; 
@@ -344,4 +353,5 @@ ul{
     justify-content: flex-end; 
     padding-right: 15px; 
   }
+
 }

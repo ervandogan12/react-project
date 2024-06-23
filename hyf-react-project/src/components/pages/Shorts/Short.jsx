@@ -1,17 +1,28 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg"
 import heartRegular from "../../../assets/heart-regular.svg";
 import { useFavorites } from "../../../context/FavoritesContext";
 import shortImg from '../../../assets/shortImg.png';
+import { useAuth } from "../../../context/AuthContext";
 
 
 export const Short = ({ data }) => {
   const { favoriteShorts, toggleShortFavorite } = useFavorites();
-
-
+  const {isAuthenticated} = useAuth();
+  const navigate = useNavigate();
   const isFavorited = favoriteShorts.some(short => short.id === data.id);
 
+  const handleFavoriteClick = (e) => {
+    e.preventDefault(); 
+
+    if (!isAuthenticated) {
+      navigate('/login'); 
+      alert('Please log in to add favorites.'); 
+      return;
+    }
+    toggleShortFavorite(data);
+  };
   return (
     <li className="book-list">
       <Link to={`/api/shorts/${data.id}`}>
@@ -21,8 +32,8 @@ export const Short = ({ data }) => {
             <div
               className="book-image-favorite-container"
               onClick={(e) => {
-                e.preventDefault(); // Prevent link navigation
-                toggleShortFavorite(data);
+                e.preventDefault(); 
+                handleFavoriteClick(e);
               }}
             >
               {isFavorited ? (
