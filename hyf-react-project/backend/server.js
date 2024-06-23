@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('./models/User.js'); // Assume you've defined a User model
-require('dotenv').config(); // Add this line to use dotenv for environment variables
+const User = require('./models/User.js'); 
+require('dotenv').config(); 
 const cors = require('cors');
 
 const app = express();
@@ -38,5 +38,5 @@ app.post('/login', async (req, res) => {
   res.json({ token });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
