@@ -23,7 +23,7 @@ const AuthForm = () => {
         password,
       });
       console.log(response.data.token);
-      login(response.data.token);
+      login(response.data.token, email);
       setMessage("Registration successful");
       setEmail("");
       setPassword("");
@@ -41,9 +41,8 @@ const AuthForm = () => {
         password,
       });
 
-      login(response.data.token);
+      login(response.data.token, email);
       setMessage("Login successful");
-
       setEmail("");
       setPassword("");
       navigate("/");

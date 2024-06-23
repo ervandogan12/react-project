@@ -7,6 +7,7 @@ import AppRoutes from "./Routes";
 import Footer from "./components/Footer";
 import "./App.css"; // Import App.css
 import { AuthProvider } from "./context/AuthContext";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   const isAuthenticated = localStorage.getItem("token") ? true : false;
@@ -16,7 +17,9 @@ function App() {
         <FavoritesProvider>
           <Router>
             <div className="appContainer">
+          
               <Nav />
+              <UserProfile />
               <div className="contentContainer">
                 <AppRoutes />
               </div>
