@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate  } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg";
 import heartRegular from "../../../assets/heart-regular.svg";
 import "../../../../src/App.css";
 import { useFavorites } from "../../../context/FavoritesContext";
+import { useAuth } from "../../../context/AuthContext";
 
 function ShortDetail() {
   const [short, setShort] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
-
+  const navigate = useNavigate();
+  const {isAuthenticated} = useAuth();
 
   const { favoriteShorts, toggleShortFavorite } = useFavorites();
 
@@ -37,7 +39,16 @@ function ShortDetail() {
   if (error) {
     return <div>Error: {error}</div>;
   }
+  const handleFavoriteClick = (e) => {
+    e.preventDefault(); 
 
+    if (!isAuthenticated) {
+      navigate('/login'); 
+      alert('Please log in to add favorites.'); 
+      return;
+    }
+    toggleShortFavorite(short);
+  };
   return short ? (
     <div className="book-details-container">
       <div className="book-text-details">
@@ -69,10 +80,10 @@ function ShortDetail() {
         </div>
       )}
       <div
-        className="book-image-favorite-container" 
+        className="book-image-favorite-container" style={{ marginTop: "-100px" }}
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
-          toggleShortFavorite(short);
+          handleFavoriteClick(e);
         }}
 
         style={{
@@ -87,10 +98,10 @@ function ShortDetail() {
         }}
       >
         {isFavorited ? (
-          <img className="icon-favourite" src={heartSolid} alt="Favorited" />
+          <img style={{ marginTop: "100px" }} className="icon-favourite" src={heartSolid} alt="Favorited" />
         ) : (
           <img
-            className="icon-favourite"
+            className="icon-favourite" style={{ marginTop: "100px" }}
             src={heartRegular}
             alt="Not Favorited"
           />
@@ -98,7 +109,7 @@ function ShortDetail() {
       </div>
     </div>
   ) : (
-    <p>Loading...</p>
+    <p style={{ marginTop: "200px" }}>Loading...</p>
   );
 }
 

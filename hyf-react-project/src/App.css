@@ -54,7 +54,7 @@ nav {
   width: 100%;
   padding: 1rem; 
   overflow: hidden;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 .nav-items {
   width: 100%; 
@@ -98,7 +98,8 @@ nav {
   left: 0;
   width: 25%;
 }
-.book-list{
+.book-list {
+  position: relative; /* Ensure this is here to act as a reference for the absolute positioning below */
   margin: 8px;
   padding: 8px;
   border: 1px solid #efeff0;
@@ -108,11 +109,12 @@ nav {
   flex-direction: column;
   text-align: center;
   transition: transform 0.3s;
-  position: relative;
+  position: relative; /* Added this line */
   margin-bottom: 10px;
 }
 .book{
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100%;
 }
@@ -121,6 +123,8 @@ nav {
   margin-top: auto;
   max-height: 200px;
   object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 .book-title {
   overflow: hidden;
@@ -155,12 +159,21 @@ nav {
   }
 }
 .book-details-container {
+  margin-top: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: start; 
+  flex-direction: row;
+  align-items:center; 
   gap: 10px; 
   padding: 20px; 
 }
+.book-text-details {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  padding: 120px; 
+}
+
 
 .title-container {
   flex: 2;
@@ -173,29 +186,35 @@ nav {
   flex: 1;
 }
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: start; 
-  align-items: start; 
+
   gap: 20px; 
 }
 .villains-list-container {
   flex: 1; 
 }
+
+.book-image-container {
+  flex: 1; 
+  position: relative; 
+}
 .book-image-favorite-container {
-  background-color: #fff;
+
   cursor: pointer;
-  height: 40px; 
+  height: 20px; 
   padding: 8px;
   position: absolute; 
-  top: 1vh; 
-  right: 10px; 
-  width: 25px; 
+
+  bottom: 0; 
+  left: 0;
+  max-height: 10px;
+
+  
 }
 .icon-favourite {
   position: absolute;
-  right: 8px; 
-  top: 8px; 
+  right: -2px; 
+  margin-top: 50px;
+
   width: 24px; 
   height: 24px; 
 }
@@ -261,7 +280,11 @@ ul{
   padding-left: 10px; 
 }
 @media (max-width: 768px) {
+  .book-details-container {
 
+    flex-direction: column;
+  
+  }
   .user-profile {
     background-color: lightblue;
     max-width: 100%;

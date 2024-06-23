@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg";
 import heartRegular from "../../../assets/heart-regular.svg";
 import "../../../../src/App.css";
 import { useFavorites } from "../../../context/FavoritesContext";
 import bookImg from "../../../assets/stepking.png";
+import { useAuth } from "../../../context/AuthContext"; 
 
 function BookDetail() {
   const [book, setBook] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
-  const numericId = Number(id);
+  const navigate = useNavigate();
+
+  const {isAuthenticated} = useAuth();
 
   const { favoriteBooks, toggleBookFavorite } = useFavorites();
 
@@ -39,6 +42,16 @@ function BookDetail() {
     return <div>Error: {error}</div>;
   }
 
+  const handleFavoriteClick = (e) => {
+    e.preventDefault(); 
+
+    if (!isAuthenticated) {
+      navigate('/login'); 
+      alert('Please log in to add favorites.'); 
+      return;
+    }
+    toggleBookFavorite(book);
+  };
   return book ? (
     <div className="book-details-container">
       <div className="book-text-details">
@@ -72,7 +85,7 @@ function BookDetail() {
         className="book-image-favorite-container"
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
-          toggleBookFavorite(book);
+          handleFavoriteClick(e);
         }}
         style={{
           backgroundColor: "#fff",
