@@ -9,12 +9,12 @@ const AuthForm = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
-
+ 
+  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'https://react-project-2-3m1d.onrender.com';
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/register', { email, password });
-      setMessage('Register successful');
+      const response = await axios.post(`${API_BASE_URL}/login`, { email, password });
       login(response.data.token);
      
       setEmail('');
@@ -28,7 +28,7 @@ const AuthForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const response = await axios.post('https://react-project-2-3m1d.onrender.com/login', { email, password });
       login(response.data.token);
       setMessage('Login successful');
      
