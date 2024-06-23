@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { jwtDecode } from '/node_modules/.vite/deps/jwt-decode.js?v=6dca41cb';
+
 
 const AuthContext = createContext();
 
@@ -15,11 +15,21 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       setIsAuthenticated(true);
-      const decodedToken = jwtDecode(token);
+      const decodedToken = decodeToken(token);
       setUserEmail(decodedToken.email); 
     }
   }, []);
 
+  function decodeToken(token) {
+    const base64Url = token.split('.')[1]; // Get the payload part
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); // Convert Base64Url to Base64
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+  
+    return JSON.parse(jsonPayload);
+  }
+  
   const login = (token) => {
     localStorage.setItem('token', token);
     setIsAuthenticated(true);
