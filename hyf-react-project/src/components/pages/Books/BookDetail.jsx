@@ -82,27 +82,18 @@ function BookDetail() {
         </div>
       )}
       <div
-        className="book-image-favorite-container"
+        className=".book-details-image-favorite-container"
         onClick={(e) => {
           e.preventDefault(); // Prevent link navigation
           handleFavoriteClick(e);
         }}
-        style={{
-          backgroundColor: "#fff",
-          cursor: "pointer",
-          height: "40px",
-          padding: "8px",
-          position: "absolute",
-          top: "14vh",
-          right: "10px",
-          width: "40px",
-        }}
+     
       >
         {isFavorited ? (
-          <img className="icon-favourite" src={heartSolid} alt="Favorited" />
+          <img className="icon-details-favourite" src={heartSolid} alt="Favorited" />
         ) : (
           <img
-            className="icon-favourite"
+            className="icon-details-favourite"
             src={heartRegular}
             alt="Not Favorited"
           />

@@ -79,24 +79,14 @@ function ShortDetail() {
           </div>
         </div>
       )}
-      <div
-        className="book-image-favorite-container" style={{ marginTop: "-100px" }}
-        onClick={(e) => {
-          e.preventDefault(); // Prevent link navigation
-          handleFavoriteClick(e);
-        }}
+<div
+  className="book-details-image-favorite-container"
+  onClick={(e) => {
+    e.preventDefault(); 
+    handleFavoriteClick(e);
+  }}
 
-        style={{
-          backgroundColor: '#fff',
-          cursor: 'pointer',
-          height: '40px',
-          padding: '8px',
-          position: 'absolute',
-          top: '14vh',
-          right: '10px',
-          width: '40px',
-        }}
-      >
+>
         {isFavorited ? (
           <img style={{ marginTop: "100px" }} className="icon-favourite" src={heartSolid} alt="Favorited" />
         ) : (
