@@ -57,15 +57,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 # Structure
 
 The structure of the project is like;
-.
+project-root
+│
 ├── README.md
+│
 ├── backend
 │   ├── models
 │   ├── node_modules
 │   ├── package-lock.json
 │   ├── package.json
 │   └── server.js
-
+│
 ├── src
 │   ├── App.css
 │   ├── App.jsx
@@ -112,6 +114,7 @@ The structure of the project is like;
 │   │   └── FavoritesContext.jsx
 │   ├── index.css
 │   └── main.jsx
+│
 └── vite.config.js
 
 
