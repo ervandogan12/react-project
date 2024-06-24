@@ -101,7 +101,7 @@ function BookDetail() {
       </div>
     </div>
   ) : (
-    <p>Loading...</p>
+    <p style={{marginTop:"50px"}}>Loading...</p>
   );
 }
 

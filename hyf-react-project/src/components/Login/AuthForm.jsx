@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const AuthForm = () => {
 
   const API_BASE_URL =
     import.meta.env.VITE_REACT_APP_BACKEND_URL ||
-    "https://react-project-2-3m1d.onrender.com";
+    "https://react-project-fgtj.onrender.com";
   const handleRegister = async (e) => {
     e.preventDefault();
     try {

@@ -99,7 +99,7 @@ function ShortDetail() {
       </div>
     </div>
   ) : (
-    <p style={{ marginTop: "200px" }}>Loading...</p>
+    <p style={{ marginTop: "50px" }}>Loading...</p>
   );
 }
 

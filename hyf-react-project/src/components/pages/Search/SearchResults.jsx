@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
-import Book from '../components/pages/Books/Book';
+import { useLocation } from 'react-router-dom'; 
+import Book from '../Books/Book';
 
 function SearchResults() {
   const location = useLocation();
@@ -8,7 +8,7 @@ function SearchResults() {
 
   return (
     <div>
-      <h2>Search Results</h2>
+      <h2  className='search-filter-title'>Search Results</h2>
       {searchResults.length > 0 ? (
         <ul className="books">
           {searchResults.map((searchResult) => (

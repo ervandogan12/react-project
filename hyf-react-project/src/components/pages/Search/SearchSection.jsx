@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Book from "./pages/Books/Book";
+import Book from "../Books/Book";
 
 function SearchSection() {
   const [searchQuery, setSearchQuery] = useState("");

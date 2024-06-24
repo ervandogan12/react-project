@@ -9,11 +9,9 @@ import Shorts from './components/pages/Shorts/Shorts';
 import Villains from './components/pages/Villains/Villains';
 import BookDetail from './components/pages/Books/BookDetail';
 import VillainDetail from './components/pages/Villains/VillainDetails';
-import SearchResults from './components/SearchResults';
-import FilterResults from './components/FilterResults';
-import Login from './Login';
-import Registration from './Registration';
-import AuthForm from './Login';
+import SearchResults from './components/pages/Search/SearchResults';
+import FilterResults from './components/pages/Filter/FilterResults';
+import AuthForm from './components/Login/AuthForm';
 
 
 
@@ -22,7 +20,6 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/login" element={<AuthForm />} />
       <Route path="/" element={<LandingPage />} />
-      <Route path="/registration" element={<Registration />} />
       <Route path="api/books/:id" element={<BookDetail />} />
       <Route path="api/shorts/:id" element={<ShortDetail />} />
       <Route path="api/villains/:id" element={<VillainDetail />} />

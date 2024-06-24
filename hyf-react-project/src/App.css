@@ -54,6 +54,11 @@ label {
   flex-grow: 1;
   margin-top: -2rem;
 }
+.search-filter-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
 nav {
   background-color: #f0f0f0;
@@ -213,7 +218,7 @@ nav {
 }
 
 .flex-container {
- margin-top: -100px;
+  margin-top: -100px;
   gap: 20px;
 }
 

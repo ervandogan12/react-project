@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SearchSection from "./SearchSection";
+import SearchSection from "./pages/Search/SearchSection";
 import { useDataSet } from "../context/DataContext";
-import FilterSection from "./FilterSection";
+import FilterSection from "./pages/Filter/FilterSection";
 import { useAuth } from "../context/AuthContext";
-import UserProfile from "./UserProfile";
+
 function Nav() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const { handleCategoryClick } = useDataSet();

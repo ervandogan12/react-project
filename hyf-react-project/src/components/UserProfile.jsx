@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext'; // Adjust the import path as n
 
 function UserProfile() {
   const { userEmail } = useAuth();
-  console.log(userEmail);
+
 
   return (
     <div className='user-profile'>

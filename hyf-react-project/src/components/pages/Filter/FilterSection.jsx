@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useDataSet } from "../context/DataContext";
+
 import { useNavigate } from "react-router-dom";
-import Book from "./pages/Books/Book";
 
 function FilterSection() {
   const [selectedYear, setSelectedYear] = useState("");
@@ -38,8 +37,21 @@ function FilterSection() {
   };
 
   return (
-    <form className="filter-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize:"2rem" }} onSubmit={handleSubmit}>
-      <select value={selectedYear}  style={{ fontSize: "1.2rem" }} onChange={handleYearChange}>
+    <form
+      className="filter-section"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "2rem",
+      }}
+      onSubmit={handleSubmit}
+    >
+      <select
+        value={selectedYear}
+        style={{ fontSize: "1.2rem" }}
+        onChange={handleYearChange}
+      >
         <option value="">Select a year</option>
         {[...Array(51).keys()].map((i) => (
           <option key={i} value={1974 + i}>
@@ -47,7 +59,9 @@ function FilterSection() {
           </option>
         ))}
       </select>
-      <button type="submit"style={{ fontSize: "1.3rem" }}>Filter</button>
+      <button type="submit" style={{ fontSize: "1.3rem" }}>
+        Filter
+      </button>
     </form>
   );
 }
