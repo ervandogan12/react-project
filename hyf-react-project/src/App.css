@@ -1,18 +1,24 @@
 :root {
   --background-light: #fff;
-  --background-dark: #7e6767;
+  --background-dark: #0d0c0c;
   --text-light: #000;
   --text-dark: #fff;
+ 
 }
 
 .light-theme {
   background-color: var(--background-light);
   color: var(--text-light);
+  --icon-color: #000;
+  --icon-fill-color: #000;
 }
 
 .dark-theme {
   background-color: var(--background-dark);
   color: var(--text-dark);
+  --icon-fill-color: #fff;
+  --icon-color: #fff;
+ 
 }
 
 
@@ -26,7 +32,8 @@
   text-align: center;
   padding: 20px;
   margin-top: 20px;
-  background-color: #f0f0f0;
+  background-color: blue;
+
 }
 
 .authform-container {
@@ -43,7 +50,7 @@
 
 .user-profile {
   padding: 10px;
-  background-color: lightgray;
+  background-color: blue;
   border-radius: 5px;
   margin: 5px;
   text-align: center;
@@ -78,7 +85,7 @@ label {
 }
 
 nav {
-  background-color: #f0f0f0;
+  background-color: blue;
   width: 100%;
   padding: 1rem;
   overflow: hidden;
@@ -274,7 +281,7 @@ nav {
   position: absolute;
   right: -2px;
   margin-top: 50px;
-
+  color: red;
   width: 24px;
   height: 24px;
 }

@@ -47,7 +47,7 @@ function VillainDetail() {
           {villain.books.map((book, index) => (
             <li key={index}>
               Book:{" "}
-              <a href={book.url} target="_blank" rel="noopener noreferrer">
+              <a>
                 {book.title}
               </a>
             </li>

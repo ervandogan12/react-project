@@ -50,10 +50,11 @@ export const Book = ({ data }) => {
               )}
             </div>
           </div>
-          <span className="book-title">{data.Title}</span>
-          <span className="book-year">{data.Year}</span>
+
         </div>
       </Link>
+      <span className="book-title">{data.Title}</span>
+      <span className="book-year">{data.Year}</span>
     </li>
   );
 };

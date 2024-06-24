@@ -51,10 +51,11 @@ export const Short = ({ data }) => {
               )}
             </div>
           </div>
-          <span className="book-title">{data.title}</span>
-          <span className="book-title">{data.year}</span>
+
         </div>
       </Link>
+      <span className="book-title">{data.title}</span>
+      <span className="book-title">{data.year}</span>
     </li>
   );
 };

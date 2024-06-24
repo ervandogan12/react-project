@@ -26,6 +26,7 @@ function ThemedApp() {
                 <div className="contentContainer">
                   <AppRoutes />
                 </div>
+                <Footer />
               </div>
             </div>
           </Router>
