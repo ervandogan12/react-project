@@ -115,17 +115,22 @@ The structure of the project is like;
 └── vite.config.js
 
 
-Goals and Backlog
-Must-Have Features
-<input checked="" disabled="" type="checkbox"> Project structure setup.
-<input checked="" disabled="" type="checkbox"> Landing page development.
-<input checked="" disabled="" type="checkbox"> Implementation of data-fetching endpoints.
-<input checked="" disabled="" type="checkbox"> Detailed views for Books, Shorts, and Villains.
-<input checked="" disabled="" type="checkbox"> Favorites list functionality.
-<input checked="" disabled="" type="checkbox"> Search functionality.
-Nice-to-Have Features
-<input disabled="" type="checkbox"> Filter books by year.
-<input disabled="" type="checkbox"> Toggle between dark and light modes.
-<input disabled="" type="checkbox"> Log in/Register and Log Out .
+# Goals and Backlog
+## Must-Have Features
 
-For design inspiration and functionality, the project draws from various sources, aiming to create a user-friendly and engaging platform for Stephen King fans. ``
+- [X] Project structure setup.
+- [X] Landing page development.
+- [X] Implementation of data-fetching endpoints.
+- [X] Detailed views for Books, Shorts, and Villains.
+- [X] Pagination.
+- [X] Favorites list functionality.
+- [X] Search functionality.
+
+## Nice-to-Have Features
+
+- [X] Filter books by year.
+- [X] Log in/Register and Log Out.
+- [ ] Toggle between dark and light modes.
+
+
+For design inspiration and functionality, the project draws from various sources, aiming to create a user-friendly and engaging platform for Stephen King fans. 
