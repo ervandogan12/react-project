@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg";
 import heartRegular from "../../../assets/heart-regular.svg";
 import "../../../../src/App.css";
 import { useFavorites } from "../../../context/FavoritesContext";
-import bookImg from "../../../assets/stepking.png";
-import { useAuth } from "../../../context/AuthContext"; 
+import { useAuth } from "../../../context/AuthContext";
 
 function BookDetail() {
   const [book, setBook] = useState(null);
@@ -13,11 +12,13 @@ function BookDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const {isAuthenticated} = useAuth();
+  const { isAuthenticated } = useAuth();
 
   const { favoriteBooks, toggleBookFavorite } = useFavorites();
 
-  const isFavorited = favoriteBooks.some((favoriteBook) => favoriteBook.id === book?.id);
+  const isFavorited = favoriteBooks.some(
+    (favoriteBook) => favoriteBook.id === book?.id
+  );
 
   const fetchBookDetails = async () => {
     try {
@@ -43,11 +44,11 @@ function BookDetail() {
   }
 
   const handleFavoriteClick = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (!isAuthenticated) {
-      navigate('/login'); 
-      alert('Please log in to add favorites.'); 
+      navigate("/login");
+      alert("Please log in to add favorites.");
       return;
     }
     toggleBookFavorite(book);
@@ -64,7 +65,6 @@ function BookDetail() {
           <li>Notes: {book.Notes.join(", ")}</li>
         </ul>
       </div>
-      {/* <img className="book-details-img" src={bookImg} alt={book.Title} /> */}
 
       {book.villains && Array.isArray(book.villains) && (
         <div className="flex-container">
@@ -74,7 +74,6 @@ function BookDetail() {
               {book.villains.map((villain, index) => (
                 <li key={index}>
                   Name: {villain.name}, Power: {villain.power}
-                  {/* Add more attributes as needed */}
                 </li>
               ))}
             </ul>
@@ -84,13 +83,16 @@ function BookDetail() {
       <div
         className=".book-details-image-favorite-container"
         onClick={(e) => {
-          e.preventDefault(); // Prevent link navigation
+          e.preventDefault();
           handleFavoriteClick(e);
         }}
-     
       >
         {isFavorited ? (
-          <img className="icon-details-favourite" src={heartSolid} alt="Favorited" />
+          <img
+            className="icon-details-favourite"
+            src={heartSolid}
+            alt="Favorited"
+          />
         ) : (
           <img
             className="icon-details-favourite"
@@ -101,7 +103,7 @@ function BookDetail() {
       </div>
     </div>
   ) : (
-    <p style={{marginTop:"50px"}}>Loading...</p>
+    <p style={{ marginTop: "50px" }}>Loading...</p>
   );
 }
 

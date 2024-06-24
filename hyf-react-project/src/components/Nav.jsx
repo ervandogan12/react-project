@@ -4,6 +4,7 @@ import SearchSection from "./pages/Search/SearchSection";
 import { useDataSet } from "../context/DataContext";
 import FilterSection from "./pages/Filter/FilterSection";
 import { useAuth } from "../context/AuthContext";
+import ThemeSwitch from "./ThemeSwitch";
 
 function Nav() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
@@ -67,6 +68,9 @@ function Nav() {
         </li>
         <li>
           <FilterSection />
+        </li>
+        <li>
+          <ThemeSwitch />
         </li>
         <li onClick={handleLogout}>
           <i className="fas fa-sign-out-alt"></i>

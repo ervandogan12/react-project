@@ -1,4 +1,4 @@
-// src/routes/Routes.jsx or a similar path
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ShortDetail from './components/pages/Shorts/ShortDetail';

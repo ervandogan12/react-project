@@ -1,34 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { DataProvider } from "./context/DataContext";
-import { FavoritesProvider } from "./context/FavoritesContext";
-import Nav from "./components/Nav";
-import AppRoutes from "./Routes";
-import Footer from "./components/Footer";
-import "./App.css"; // Import App.css
-import { AuthProvider } from "./context/AuthContext";
-import UserProfile from "./components/UserProfile";
+
+
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import ThemedApp from './ThemedApp';
 
 function App() {
-  const isAuthenticated = localStorage.getItem("token") ? true : false;
   return (
-    <AuthProvider>
-      <DataProvider>
-        <FavoritesProvider>
-          <Router>
-            <div className="appContainer">
-          
-              <Nav />
-              <UserProfile />
-              <div className="contentContainer">
-                <AppRoutes />
-              </div>
-              <Footer />
-            </div>
-          </Router>
-        </FavoritesProvider>
-      </DataProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <ThemedApp />
+    </ThemeProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate  } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import heartSolid from "../../../assets/heart-solid.svg";
 import heartRegular from "../../../assets/heart-regular.svg";
 import "../../../../src/App.css";
@@ -11,11 +11,13 @@ function ShortDetail() {
   const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
-  const {isAuthenticated} = useAuth();
+  const { isAuthenticated } = useAuth();
 
   const { favoriteShorts, toggleShortFavorite } = useFavorites();
 
-  const isFavorited = favoriteShorts.some((favoriteShort) => favoriteShort.id === short?.id);
+  const isFavorited = favoriteShorts.some(
+    (favoriteShort) => favoriteShort.id === short?.id
+  );
 
   const fetchShortDetails = async () => {
     try {
@@ -40,11 +42,11 @@ function ShortDetail() {
     return <div>Error: {error}</div>;
   }
   const handleFavoriteClick = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (!isAuthenticated) {
-      navigate('/login'); 
-      alert('Please log in to add favorites.'); 
+      navigate("/login");
+      alert("Please log in to add favorites.");
       return;
     }
     toggleShortFavorite(short);
@@ -52,7 +54,7 @@ function ShortDetail() {
   return short ? (
     <div className="book-details-container">
       <div className="book-text-details">
-      <h2>Short Title: {short.title}</h2>
+        <h2>Short Title: {short.title}</h2>
         <ul>
           <li>Year: {short.year}</li>
           <li>Type: {short.type}</li>
@@ -62,7 +64,6 @@ function ShortDetail() {
           <li>Notes: {short.notes}</li>
         </ul>
       </div>
-      {/* <img className="book-details-img" src={bookImg} alt={book.Title} /> */}
 
       {short.villains && Array.isArray(short.villains) && (
         <div className="flex-container">
@@ -72,26 +73,30 @@ function ShortDetail() {
               {short.villains.map((villain, index) => (
                 <li key={index}>
                   Name: {villain.name}, Power: {villain.power}
-                  {/* Add more attributes as needed */}
                 </li>
               ))}
             </ul>
           </div>
         </div>
       )}
-<div
-  className="book-details-image-favorite-container"
-  onClick={(e) => {
-    e.preventDefault(); 
-    handleFavoriteClick(e);
-  }}
-
->
+      <div
+        className="book-details-image-favorite-container"
+        onClick={(e) => {
+          e.preventDefault();
+          handleFavoriteClick(e);
+        }}
+      >
         {isFavorited ? (
-          <img style={{ marginTop: "100px" }} className="icon-favourite" src={heartSolid} alt="Favorited" />
+          <img
+            style={{ marginTop: "100px" }}
+            className="icon-favourite"
+            src={heartSolid}
+            alt="Favorited"
+          />
         ) : (
           <img
-            className="icon-favourite" style={{ marginTop: "100px" }}
+            className="icon-favourite"
+            style={{ marginTop: "100px" }}
             src={heartRegular}
             alt="Not Favorited"
           />

@@ -10,9 +10,7 @@ const AuthForm = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const API_BASE_URL =
-    import.meta.env.VITE_REACT_APP_BACKEND_URL ||
-    "https://react-project-fgtj.onrender.com";
+  const API_BASE_URL =import.meta.env.VITE_REACT_APP_BACKEND_URL ||"https://react-project-fgtj.onrender.com";
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -48,6 +46,8 @@ const AuthForm = () => {
       setMessage(error.response.data.error); 
     }
   };
+
+
 
   return (
     <div className="authform-container">

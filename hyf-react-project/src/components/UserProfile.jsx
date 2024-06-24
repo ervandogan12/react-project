@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../context/AuthContext'; // Adjust the import path as necessary
+import { useAuth } from '../context/AuthContext'; 
 
 function UserProfile() {
   const { userEmail } = useAuth();

@@ -56,7 +56,7 @@ function VillainDetail() {
       </div>
     </div>
   ) : (
-    <p>Loading...</p>
+    <p style={{ marginTop: "50px" }}>Loading...</p>
   );
 }
 

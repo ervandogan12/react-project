@@ -13,7 +13,7 @@ function Favourites() {
 
   return (
     <div>
-      <h1>Favourites</h1>
+      <h1 className='search-filter-title'>Favourites</h1>
       {favoriteBooks.length === 0 && favoriteShorts.length === 0 ? (
         <p>No favorites added yet.</p>
       ) : (
