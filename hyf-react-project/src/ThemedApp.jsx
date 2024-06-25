@@ -10,6 +10,7 @@ import AppRoutes from "./Routes";
 import Footer from "./components/Footer";
 import UserProfile from "./components/UserProfile";
 import "./App.css";
+import "./index.css";
 
 function ThemedApp() {
   const { theme } = useTheme();

@@ -3,6 +3,7 @@
   --background-dark: #0d0c0c;
   --text-light: #000;
   --text-dark: #fff;
+
  
 }
 
@@ -20,9 +21,16 @@
   --icon-color: #fff;
  
 }
-.contentContainer{
+
+.appContainer, .contentContainer {
   display: flex;
   flex-direction: column;
+  width: 100%; 
+  box-sizing: border-box;
+
+}
+.contentContainer {
+  margin-left: 2px;
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
@@ -36,15 +44,6 @@
   max-width: 100%;
 }
 
-/* .footer-style {
-  text-align: center;
-  padding: 20px;
-  margin-top: 20px;
-  background-color: blue;
-  max-width: 100%;
-
-
-} */
 
 .footer-style {
   margin-top: 20px;
@@ -97,10 +96,7 @@ label {
   margin-top: 10px;
 }
 
-.contentContainer {
-  flex-grow: 1;
-  margin-top: -1rem;
-}
+
 .search-filter-title {
   display: flex;
   justify-content: center;
