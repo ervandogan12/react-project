@@ -21,6 +21,7 @@
   --icon-color: #fff;
 
 }
+
 .loading-spinner {
   border: 4px solid rgba(0, 0, 0, 0.1);
   width: 36px;
@@ -35,6 +36,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -310,12 +312,12 @@ nav {
 
 .book-details-image-favorite-container {
   cursor: pointer;
-  height: 20px;
+
   padding: 8px;
   position: absolute;
   top: 70px;
-  right: 0;
-  max-height: 10px;
+  right: 10px;
+
 }
 
 .icon-favourite {
@@ -415,13 +417,14 @@ ul {
 
   .book-details-image-favorite-container {
 
-    top: 38vh;
-    right: 1vh;
+    top: 48vh;
+    right: 4vh;
 
   }
+
   .landing-img {
 
-   margin-left:0;
+    margin-left: 0;
   }
 
 
@@ -547,6 +550,7 @@ ul {
     justify-content: flex-end;
     padding-right: 15px;
   }
+
   .loading-spinner {
 
     margin-left: 40%;
@@ -596,5 +600,5 @@ ul {
     transform: rotate(360deg);
   }
 
-  
+
 }
