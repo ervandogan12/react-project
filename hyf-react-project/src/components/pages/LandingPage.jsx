@@ -13,7 +13,8 @@ export const LandingPage = () => {
       marginTop: '-30px',
       textAlign: 'left', 
       minHeight: '100vh',
-      minWidth: '10vw',
+      marginLeft: '2vw',
+      padding: '10px',
     }}>
       <div style={{ alignSelf: 'flex-start' }}> 
         <h1 style={{
