@@ -4,7 +4,7 @@
   --text-light: #000;
   --text-dark: #fff;
 
- 
+
 }
 
 .light-theme {
@@ -19,16 +19,18 @@
   color: var(--text-dark);
   --icon-fill-color: #fff;
   --icon-color: #fff;
- 
+
 }
 
-.appContainer, .contentContainer {
+.appContainer,
+.contentContainer {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box;
 
 }
+
 .contentContainer {
   margin-left: 2px;
   align-items: center;
@@ -36,6 +38,8 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+
 
 .appContainer {
   display: flex;
@@ -272,7 +276,7 @@ nav {
   position: relative;
 }
 
- .book-image-favorite-container {
+.book-image-favorite-container {
 
   cursor: pointer;
   height: 20px;
@@ -284,7 +288,7 @@ nav {
   max-height: 10px;
 
 
-} 
+}
 
 .book-details-image-favorite-container {
   cursor: pointer;
@@ -292,7 +296,7 @@ nav {
   padding: 8px;
   position: absolute;
   top: 70px;
-  right: 0; 
+  right: 0;
   max-height: 10px;
 }
 
@@ -392,12 +396,16 @@ ul {
   }
 
   .book-details-image-favorite-container {
- 
+
     top: 38vh;
-    right: 1vh; 
+    right: 1vh;
 
   }
-  
+  .landing-img {
+
+   margin-left:0;
+  }
+
 
   .flex-container {
 
@@ -523,12 +531,14 @@ ul {
   }
 
 }
+
 .lds-ring {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -541,19 +551,24 @@ ul {
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #000 transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
