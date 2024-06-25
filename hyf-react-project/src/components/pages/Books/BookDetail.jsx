@@ -81,7 +81,7 @@ function BookDetail() {
         </div>
       )}
       <div
-        className=".book-details-image-favorite-container"
+        className="book-details-image-favorite-container"
         onClick={(e) => {
           e.preventDefault();
           handleFavoriteClick(e);

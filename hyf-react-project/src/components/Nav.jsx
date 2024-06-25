@@ -73,7 +73,7 @@ function Nav() {
           <ThemeSwitch />
         </li>
         <li onClick={handleLogout}>
-          <i className="fas fa-sign-out-alt"></i>
+          <i style={{marginTop:"8px", marginRight:"1.2rem"}} className="fas fa-sign-out-alt"></i>
         </li>
       </ul>
     </nav>

@@ -80,6 +80,7 @@ project-root
 │   │   ├── stepking.png
 │   │   └── villains.png
 │   ├── components
+│   │   ├── ThemeSwitch.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Login
 │   │   │   ├── AuthForm.jsx
@@ -114,6 +115,7 @@ project-root
 │   │   └── FavoritesContext.jsx
 │   ├── index.css
 │   └── main.jsx
+│   └── ThemedApp.jsx
 │
 └── vite.config.js
 
@@ -133,7 +135,7 @@ project-root
 
 - [X] Filter books by year.
 - [X] Log in/Register and Log Out.
-- [ ] Toggle between dark and light modes.
+- [X] Toggle between dark and light modes.
 
 
 For design inspiration and functionality, the project draws from various sources, aiming to create a user-friendly and engaging platform for Stephen King fans. 

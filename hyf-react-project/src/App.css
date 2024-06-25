@@ -20,20 +20,43 @@
   --icon-color: #fff;
  
 }
-
+.contentContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 .appContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100%;
 }
 
-.footer-style {
+/* .footer-style {
   text-align: center;
   padding: 20px;
   margin-top: 20px;
   background-color: blue;
+  max-width: 100%;
 
+
+} */
+
+.footer-style {
+  margin-top: 20px;
+  background-color: blue;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  max-height: 30px;
+  padding: auto;
 }
 
 .authform-container {
@@ -76,7 +99,7 @@ label {
 
 .contentContainer {
   flex-grow: 1;
-  margin-top: -2rem;
+  margin-top: -1rem;
 }
 .search-filter-title {
   display: flex;
@@ -253,7 +276,7 @@ nav {
   position: relative;
 }
 
-.book-image-favorite-container {
+ .book-image-favorite-container {
 
   cursor: pointer;
   height: 20px;
@@ -265,15 +288,15 @@ nav {
   max-height: 10px;
 
 
-}
+} 
 
 .book-details-image-favorite-container {
   cursor: pointer;
   height: 20px;
   padding: 8px;
   position: absolute;
-  margin-top: 0;
-  margin-right: 0;
+  top: 70px;
+  right: 0; 
   max-height: 10px;
 }
 
@@ -300,7 +323,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
 .pagination button {
@@ -311,6 +333,7 @@ nav {
   background-color: #f0f0f0;
   border: 1px solid #d1d1d1;
   border-radius: 5px;
+
 }
 
 .pagination button:hover {
@@ -371,6 +394,14 @@ ul {
   .book-text-details {
     margin-right: 110px;
   }
+
+  .book-details-image-favorite-container {
+ 
+    top: 38vh;
+    right: 1vh; 
+
+  }
+  
 
   .flex-container {
 
