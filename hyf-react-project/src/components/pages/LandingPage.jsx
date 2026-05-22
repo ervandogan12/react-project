@@ -10,9 +10,11 @@ export const LandingPage = () => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: '-20px',
+      marginTop: '-30px',
       textAlign: 'left', 
       minHeight: '100vh',
+      marginLeft: '2vw',
+      padding: '10px',
     }}>
       <div style={{ alignSelf: 'flex-start' }}> 
         <h1 style={{

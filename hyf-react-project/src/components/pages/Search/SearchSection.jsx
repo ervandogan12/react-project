@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Book from "./pages/Books/Book";
+import Book from "../Books/Book";
 
 function SearchSection() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,15 +38,18 @@ function SearchSection() {
   };
 
   return (
-    <form className="search-section" onSubmit={handleSubmit}>
+
+<form className="search-section" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize:"2rem" }} onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search..."
         value={searchQuery}
         onChange={handleInputChange}
+        style={{ fontSize: "1.2rem" }}
       />
-      <button type="submit">Search</button>
+      <button type="submit" style={{ fontSize: "1.3rem" }}>Search</button>
     </form>
+
   );
 }
 

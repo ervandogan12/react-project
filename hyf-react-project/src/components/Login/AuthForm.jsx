@@ -11,7 +11,7 @@ const AuthForm = () => {
   const { login } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 
-  const API_BASE_URL =import.meta.env.VITE_REACT_APP_BACKEND_URL ||"https://react-project-1-x96e.onrender.com";
+  const API_BASE_URL =import.meta.env.VITE_REACT_APP_BACKEND_URL ||"https://react-project-fgtj.onrender.com";
   const handleRegister = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -33,8 +33,6 @@ const AuthForm = () => {
     }
   };
 
-
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -50,10 +48,7 @@ const AuthForm = () => {
       setPassword("");
       navigate("/");
     } catch (error) {
-      setMessage(error.response.data.error);
-      console.error("Login error:", error);
-      setMessage("Login failed");
-      setIsLoading(false);
+      setMessage(error.response.data.error); 
     }
   };
 

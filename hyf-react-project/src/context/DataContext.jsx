@@ -25,7 +25,6 @@ export const DataProvider = ({ children }) => {
         );
         const data = await response.json();
 
-        // Update the correct dataset based on the category
         if (category === "books") {
           setBooksData(data["data"]);
         } else if (category === "villains") {
