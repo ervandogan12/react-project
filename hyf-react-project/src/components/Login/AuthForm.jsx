@@ -33,14 +33,17 @@ const AuthForm = () => {
     }
   };
 
+
+
   const handleLogin = async (e) => {
     e.preventDefault();
-    setIsLoading(true);     
+    setIsLoading(true);
     try {
       const response = await axios.post(`${API_BASE_URL}/login`, {
         email,
         password,
-      });   
+      });
+
       login(response.data.token, email);
       setMessage("Login successful");
       setEmail("");
@@ -50,32 +53,9 @@ const AuthForm = () => {
       setMessage(error.response.data.error);
       console.error("Login error:", error);
       setMessage("Login failed");
-    } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
-  //lagin handler 
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   try {
-  //     const response = await axios.post(`${API_BASE_URL}/login`, {
-  //       email,
-  //       password,
-  //     });
-
-  //     login(response.data.token, email);
-  //     setMessage("Login successful");
-  //     setEmail("");
-  //     setPassword("");
-  //     navigate("/");
-  //   } catch (error) {
-  //     setMessage(error.response.data.error);
-  //     console.error("Login error:", error);
-  //     setMessage("Login failed");
-  //     setIsLoading(false);
-  //   }
-  // };
+  };
 
 
 
